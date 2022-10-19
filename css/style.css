@@ -1,3 +1,75 @@
 *{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Rubik', sans-serif;
+}
+
+
+div.center{
+	margin:  0 auto;
+	max-width:  1280px;
+}
+
+header{
+	width: 100%;
+
+	background-color:#231d97;
+	padding: 30px;
+}
+
+header h1{
+	color:  white;
+}
+
+section{
+	padding: 30px;
+}
+
+p.adicionar_txt{
+	display: inline-block;
+	margin-bottom: 50px;
+	font-size: 19px;
+}
+
+a.adicionar_btn{
+	text-decoration: none;
+	background-color: #24cd4e;
+	padding: 5px;
+	color: white;
+	border-radius: 3px;
+	margin-left: 10px;
+}
+
+
+table{
+	width: 1280px;
+}
+
+th{
+	text-align: left;
+	padding-bottom: 10px;
+}
+
+th,td{
+	width: 10%;
+}
+
+.editar_btn{
+	text-decoration: none;
+	background-color: #f0a438;
+	padding: 5px;
+	color: white;
+	border-radius: 3px;
+	margin-left: 10px;
+}
+
+.deletar_btn{
+	text-decoration: none;
+	background-color: #eb1919;
+	padding: 5px;
+	color: white;
+	border-radius: 3px;
+	margin-left: 10px;
 
 }
