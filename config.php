@@ -2,7 +2,7 @@
 	
 	$autoload = function($class){
 	
-		include('classes/'.$class.'.php');
+		include('classe/'.$class.'.php');
 	};
 
 	spl_autoload_register($autoload);
@@ -14,7 +14,7 @@
 	define("HOST", 'localhost');
 	define("USER", "root");
 	define("PASSWORD", "");
-	define("DATABASE","projeto_01");
+	define("DATABASE","projeto_papelaria");
 
 	
 

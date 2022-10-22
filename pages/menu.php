@@ -1,5 +1,5 @@
 	<p class="adicionar_txt">Adicionar produto ao estoque:</p>
-		<a class="adicionar_btn" href="">ADICIONAR</a>
+		<a class="adicionar_btn" href="adicionar">ADICIONAR</a>
 
 		<table>
 			<tr>

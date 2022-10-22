@@ -5,6 +5,17 @@
 	font-family: 'Rubik', sans-serif;
 }
 
+.w100{
+	width: 100%;
+}
+
+.w50px{
+	width: 600px;
+}
+
+.w390px{
+	width: 395px;
+}
 
 div.center{
 	margin:  0 auto;
@@ -22,6 +33,13 @@ header h1{
 	color:  white;
 }
 
+footer{
+	position: absolute;
+	bottom:  0;
+	width:  1280px;
+	padding: 30px;
+	background-color:#231d97;
+}
 section{
 	padding: 30px;
 }
@@ -72,4 +90,36 @@ th,td{
 	border-radius: 3px;
 	margin-left: 10px;
 
+}
+
+.adicionar_txt{
+	margin-bottom: 20px;
+}
+
+form.adicionar_form{
+	text-align: center;
+}
+
+form.adicionar_form label{
+	margin-bottom:  20px;
+	display: block;
+	text-align: left;
+}
+
+form.adicionar_form div{
+
+	display: inline-block;
+}
+
+form.adicionar_form input,
+form.adicionar_form select{
+	
+	margin-bottom: 30px;
+	padding: 5px;
+	display:  inline-block;
+}
+
+form.adicionar_form .enviar_adicionar{
+	padding: 15px;
+	width:  200px;
 }

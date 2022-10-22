@@ -20,14 +20,20 @@
 	<section>
 		<?php
 
-			$url == $_GET[""];
+			$url = isset($_GET["url"])? $_GET["url"]: "home" ;
 
-			if($url ==  $_GET[INCLUDE_PATH]){
+			if($url == "home"){
 				include("pages/menu.php");
+			}else if($url == "adicionar"){
+				include("pages/adicionar_produto.php");
 			}
 
 		?>
 	</section>
+
+	<footer>
+		
+	</footer>
 </div><!--center-->
 </body>
 </html>
