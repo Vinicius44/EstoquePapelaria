@@ -29,11 +29,21 @@
 			}
 
 			$query.= ")";
-			echo $query;
-			print_r($parametros);
-
+			
 			$sql = Mysql::conectar()->prepare($query);
 			$sql->execute($parametros);
+			
+			return true;
+		}
+
+
+
+		public static function selectAll($tabela){
+			$query = "SELECT * FROM $tabela";
+			$sql = Mysql::conectar()->prepare($query);
+			$sql->execute();
+
+			return $sql->fetchAll();
 		}
 	}
 

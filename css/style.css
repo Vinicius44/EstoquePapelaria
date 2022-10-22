@@ -64,9 +64,17 @@ table{
 	width: 1280px;
 }
 
+tr{
+	padding-bottom: 20px;
+}
+
 th{
 	text-align: left;
-	padding-bottom: 10px;
+	padding-bottom: 20px;
+}
+
+td{
+	padding-bottom:  20px;
 }
 
 th,td{
@@ -122,4 +130,8 @@ form.adicionar_form select{
 form.adicionar_form .enviar_adicionar{
 	padding: 15px;
 	width:  200px;
+}
+
+div.certo{
+	display:  block;
 }
