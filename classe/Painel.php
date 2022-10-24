@@ -45,6 +45,60 @@
 
 			return $sql->fetchAll();
 		}
+
+		public static function select($tabela,$idString, $id){
+			
+			$query = "SELECT * FROM $tabela WHERE ".$idString;
+			$sql = Mysql::conectar()->prepare($query);
+			$sql->execute($id);
+
+			return $sql->fetch();
+		}
+
+
+
+		public static function update($dados){
+
+			$tabela = $_POST["tabela"];
+			$query = "UPDATE $tabela SET ";  
+			$primeiro = true;
+
+			foreach ($dados as $key => $value) {
+				if($key == 'tabela' || $key == 'acao_editar' || $key == 'id'){
+					continue;
+				}
+
+
+				if($primeiro == true){
+						$query.= $key.' = ?';
+						$primeiro = false;
+				}else{
+					$query.= ", ".$key." = ?";
+				}
+			
+				$parametros[] = $value;
+
+			}
+
+			$query.= "WHERE id = ?;";
+			$parametros[] = $_POST["id"];
+
+
+			$sql = Mysql::conectar()->prepare($query);
+
+			echo $query;
+			echo print_r($parametros);
+			
+			if($sql->execute($parametros)){
+				return true;
+			}
+			//return true;
+			
+
+
+
+		
+		}
 	}
 
 

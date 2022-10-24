@@ -26,6 +26,8 @@
 				include("pages/menu.php");
 			}else if($url == "adicionar"){
 				include("pages/adicionar_produto.php");
+			}else if($url == "editar"){
+				include("pages/editar_produto.php");
 			}
 
 		?>

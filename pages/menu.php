@@ -1,3 +1,11 @@
+	
+	<?php 
+
+	
+
+	?>
+
+
 	<p class="adicionar_txt">Adicionar produto ao estoque:</p>
 		<a class="adicionar_btn" href="adicionar">ADICIONAR</a>
 
@@ -34,8 +42,8 @@
 						<td><?php echo $value["valor_custo"]?></td>
 						<td><?php echo $value["fornecedor"]?></td>
 						<td><?php echo $value["grupo"]?></td>
-						<td><a class="editar_btn"href="">EDITAR</a></td>
-						<td><a class="deletar_btn" href="">DELETAR</a></td>
+						<td><a class="editar_btn"href="<?php echo INCLUDE_PATH ?>editar?id=<?php echo $value["id"]; ?>">EDITAR</a></td>
+						<td><a class="deletar_btn" href="<?php INCLUDE_PATH ?>deletar">DELETAR</a></td>
 					</tr>
 
 

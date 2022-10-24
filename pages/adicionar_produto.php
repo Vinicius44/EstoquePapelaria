@@ -1,4 +1,4 @@
-<h2 class="adicionar_txt">ADICIONAR UM PRODUTO</h2>
+<h2 class="titulo_txt">ADICIONAR UM PRODUTO</h2>
 <form method="post" class="adicionar_form">
 
 	<div class="w390px" style="margin-right: 10px">
@@ -45,12 +45,7 @@
 		if(isset($_POST['acao_adicionar'])){
 
 			
-			$produto = $_POST["produto"];
-			$unidade = $_POST["unidade"];
-			$fornecedor = $_POST["fornecedor"];
-			$grupo = $_POST["grupo"];
-
-			$analise = false;
+			
 
 
 			if(Painel::insert($_POST) == true){
