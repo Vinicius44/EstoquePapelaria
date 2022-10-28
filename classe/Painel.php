@@ -38,11 +38,17 @@
 
 
 
-		public static function selectAll($tabela){
-			$query = "SELECT * FROM $tabela";
-			$sql = Mysql::conectar()->prepare($query);
-			$sql->execute();
+		public static function selectAll($tabela, $start = null, $end = null){
+			if($start == null && $end == null){
+				$query = "SELECT * FROM $tabela";
+				$sql = Mysql::conectar()->prepare($query);
+				
+			}else{
+				$sql = Mysql::conectar()->prepare("SELECT * FROM $tabela LIMIT $start, $end");
+			}
 
+
+			$sql->execute();
 			return $sql->fetchAll();
 		}
 
@@ -86,18 +92,22 @@
 
 			$sql = Mysql::conectar()->prepare($query);
 
-			echo $query;
-			echo print_r($parametros);
+			
 			
 			if($sql->execute($parametros)){
 				return true;
 			}
 			//return true;
-			
-
-
-
 		
+		
+		}
+
+		public static function deletar($tabela, $id){
+			$query = "DELETE FROM $tabela WHERE id = ?";
+			$sql = Mysql::conectar()->prepare($query);
+			$sql->execute(array($id));
+
+			return true;
 		}
 	}
 

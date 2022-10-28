@@ -135,3 +135,20 @@ form.adicionar_form .enviar_adicionar{
 div.certo{
 	display:  block;
 }
+
+.div_paginacao{
+	width: 100%;
+	height:  30px;
+	
+	display: inline-block;
+}
+
+a.paginacao{
+
+	padding:  5px 5px;
+	color: white;
+	background-color:  #ccc;
+	margin-left: 5px;
+	text-align: center;
+	text-decoration: none;
+}

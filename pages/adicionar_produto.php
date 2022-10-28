@@ -1,5 +1,5 @@
 <h2 class="titulo_txt">ADICIONAR UM PRODUTO</h2>
-<form method="post" class="adicionar_form">
+<form method="post" class="adicionar_form" id="form">
 
 	<div class="w390px" style="margin-right: 10px">
 	<label>Nome do produto:</label>
@@ -49,10 +49,22 @@
 
 
 			if(Painel::insert($_POST) == true){
-				echo "<p>O produto foi enviado com sucesso.</p>";
+				echo "<script> setTimeout(function(){ 
+               			document.getElementByID('form').innerHTML = 'O produto não foi enviado, tente novamente.';
+           				 }, 5000);
+
+           				 window.location.replace(INCLUDE_PATH);
+
+
+            </script>";
+
 			}else{
 				echo "<p>O produto não foi enviado, tente novamente.</p>";
 			}
+
+			
+			sleep(1);
+			header('Location: '.INCLUDE_PATH);
 
 
 		}

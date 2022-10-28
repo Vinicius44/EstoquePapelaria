@@ -1,6 +1,17 @@
 	
 	<?php 
 
+
+		if(isset($_GET["id"])){
+			$idExcluir = (int)$_GET["id"];
+			$dadosExcluidos = Painel::deletar("tb_estoque", $idExcluir);
+			header('Location: '.INCLUDE_PATH);
+		}
+
+		$paginaAtual = isset($_GET["pagina"]) ? (int)$_GET["pagina"] : 1;
+		$porPagina = 3;
+
+		$dados = Painel::selectAll("tb_estoque", ($paginaAtual - 1) * $porPagina, $porPagina);
 	
 
 	?>
@@ -30,7 +41,7 @@
 
 				<?php
 
-					$dados = Painel::selectAll("tb_estoque");
+					
 
 					foreach($dados as $key => $value){
 
@@ -43,14 +54,37 @@
 						<td><?php echo $value["fornecedor"]?></td>
 						<td><?php echo $value["grupo"]?></td>
 						<td><a class="editar_btn"href="<?php echo INCLUDE_PATH ?>editar?id=<?php echo $value["id"]; ?>">EDITAR</a></td>
-						<td><a class="deletar_btn" href="<?php INCLUDE_PATH ?>deletar">DELETAR</a></td>
+						<td><a class="deletar_btn" href="<?php INCLUDE_PATH ?>?id=<?php echo $value["id"]; ?>">DELETAR</a></td>
 					</tr>
+
 
 
 				<?php
 
 					}
 
+
+
 				?>
 					
 		</table>
+
+		<!--<div class="div_paginacao">
+			<a href="" class="paginacao">1</a>
+			<a href="" class="paginacao">2</a>
+			<a href="" class="paginacao">3</a>
+		</div>-->
+
+		<?php
+
+			$totalPaginas = ceil(count(Painel::selectAll("tb_estoque"))  / $porPagina);
+
+			for ($i=1; $i <= $totalPaginas ; $i++) { 
+				if($i == $paginaAtual){
+					echo "<a href='".INCLUDE_PATH."?pagina=".$i."' class='paginacao'>".$i."</a>";
+				}else{
+					echo "<a href='".INCLUDE_PATH."?pagina=".$i."' class='paginacao'>".$i."</a>";
+				}
+			}
+
+		?>
